@@ -1,0 +1,140 @@
+/* General Body Styles and Right-to-Left */
+body {
+    font-family: Arial, sans-serif; /* You'll need to choose a font closer to the original */
+    direction: rtl; /* Right-to-left for Hebrew */
+    text-align: right; /* Default text alignment */
+    background-color: #f8f9fa; /* Light background */
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('../img/hero-bg.jpg') no-repeat center center/cover; /* Replace with your actual image path */
+    min-height: 400px; /* Adjust as needed */
+    position: relative;
+    color: white;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem; /* Adjust font size */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section p.lead {
+    font-size: 1.5rem; /* Adjust font size */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #343a40; /* Dark text for titles */
+    text-align: right; /* Ensure titles are right-aligned */
+}
+
+/* Sidebar (Tour Details / Booking Form) */
+.sidebar {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+.sidebar-title {
+    color: #495057;
+    font-size: 1.75rem;
+    font-weight: bold;
+    border-bottom: 2px solid #007bff; /* Blue underline */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.price-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #28a745; /* Green for price */
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* Checkmark List for "What's Included" */
+.checkmark-list {
+    padding-right: 0; /* Remove default list padding */
+}
+
+.checkmark-list li {
+    list-style: none; /* Remove default bullet */
+    margin-bottom: 10px;
+    display: flex; /* Use flexbox for icon alignment */
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.checkmark-list li i {
+    color: #28a745; /* Green checkmark */
+    margin-left: 10px; /* Space between icon and text */
+    font-size: 1.3rem;
+}
+
+/* Gallery Items */
+.gallery-item {
+    border: 1px solid #ddd;
+    background-color: #f0f0f0; /* Light grey background for placeholders */
+    min-height: 200px; /* Example height */
+}
+
+/* Card for Additional Options */
+.card {
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Responsive Adjustments (Optional, Bootstrap handles much of this) */
+@media (max-width: 991.98px) {
+    .col-lg-8.order-lg-2 {
+        order: 1 !important; /* Content above sidebar on smaller screens */
+    }
+    .col-lg-4.order-lg-1 {
+        order: 2 !important; /* Sidebar below content on smaller screens */
+        margin-top: 3rem; /* Space between content and sidebar */
+    }
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    .hero-section p.lead {
+        font-size: 1.2rem;
+    }
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
